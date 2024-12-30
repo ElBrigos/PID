@@ -24,8 +24,8 @@ jobs:
 
     # Étape 3 : Construction de l'image
     - name: Build Docker image
-      run: docker build -t elbrigos/pid:latest .
+      run: docker build -t ${{ github.repository_owner }}/pid:latest .
 
     # Étape 4 : Push de l'image
     - name: Push Docker image
-      run: docker push elbrigos/pid:latest
+      run: docker push ${{ github.repository_owner }}/pid:latest
