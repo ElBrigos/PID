@@ -14,10 +14,6 @@ RUN echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-n
 RUN apt update && apt full-upgrade -y && \
     apt install proxmox-ve postfix open-iscsi chrony -y
 
-# Ajouter et exécuter le script réseau (si nécessaire)
-COPY net.sh /net.sh
-RUN chmod +x /net.sh && /net.sh
-
 # Démarrage avec systemd
 CMD ["bash"]
 ENTRYPOINT ["/sbin/init"]
